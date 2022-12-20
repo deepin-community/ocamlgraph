@@ -1,0 +1,403 @@
+ocamlgraph (1.8.8-1.1-deepin1) unstable; urgency=medium
+
+  * Rebuild
+
+ -- Deepin Packages Builder <packages@deepin.org>  Fri, 11 Nov 2022 18:01:41 +0800
+
+ocamlgraph (1.8.8-1.1) unstable; urgency=medium
+
+  * Non-maintainer upload.
+  * Add German man page translation. Closes: #866145.
+  * Add Portuguese man page translation. Closes: #759173.
+  * Add infrastructure to actually build and install all manpages, including
+    the english one. Taken from package camomile.
+
+ -- Helge Kreutzmann <debian@helgefjell.de>  Sun, 23 Dec 2018 07:42:45 +0100
+
+ocamlgraph (1.8.8-1) unstable; urgency=medium
+
+  * New upstream release
+  * Update Vcs-* fields to target Salsa instead of Alioth
+  * Install META file in libocamlgraph-ocaml-dev
+  * Update .docs file with s/README/README.adoc/
+  * Remove editor, view_graph and dgraph as they need GnomeCanvas
+    - Remove liblablgtk2-ocaml-dev and liblablgtk2-gnome-ocaml-dev
+      from Build-Depends
+    - Remove binary packages libocamlgraph-viewer-ocaml-dev and
+      ocamlgraph-editor
+
+ -- Mehdi Dogguy <mehdi@debian.org>  Sun, 02 Dec 2018 17:56:17 +0100
+
+ocamlgraph (1.8.6-1) unstable; urgency=medium
+
+  * New upstream release.
+  * Update debian/copyright file.
+  * Bump Standards-Version to 3.9.6, no changes required.
+  * Fix watch file.
+
+ -- Mehdi Dogguy <mehdi@debian.org>  Mon, 31 Aug 2015 14:16:54 +0000
+
+ocamlgraph (1.8.5-1) unstable; urgency=medium
+
+  * New upstream release
+
+ -- Mehdi Dogguy <mehdi@debian.org>  Sun, 27 Apr 2014 10:52:17 +0200
+
+ocamlgraph (1.8.4-1) unstable; urgency=medium
+
+  [ Johannes Schauer ]
+  * Team upload.
+  * Imported Upstream version 1.8.4
+  * Refreshed patches and deleted those which were merged upstream:
+    - 0003-fixed-compilation-issue-with-OCaml-3.12.1.patch
+    - 0004-Merge-bug-fixed-compilation-issue-with-OCaml-3.12.1.patch
+
+ -- Johannes Schauer <j.schauer@email.de>  Mon, 24 Mar 2014 11:44:32 +0100
+
+ocamlgraph (1.8.3-1) unstable; urgency=low
+
+  [ Sylvain Le Gall ]
+  * Remove Sylvain Le Gall from uploaders
+
+  [ Mehdi Dogguy ]
+  * New upstream release
+  * Update debian/copyright
+  * Add new patches from upstream's repository:
+    - 0003-fixed-compilation-issue-with-OCaml-3.12.1.patch
+    - 0004-Merge-bug-fixed-compilation-issue-with-OCaml-3.12.1.patch
+  * Bump Standards-Version to 3.9.4, no changes needed.
+
+ -- Mehdi Dogguy <mehdi@debian.org>  Sun, 24 Nov 2013 16:29:52 +0100
+
+ocamlgraph (1.8.2-2) unstable; urgency=low
+
+  * Delete README.source file since its content is outdated.
+  * Build manpages during binary-only builds too. This fixes FTBFS on
+    autobuilders or when building with "-B".
+
+ -- Mehdi Dogguy <mehdi@debian.org>  Tue, 15 May 2012 14:39:46 +0200
+
+ocamlgraph (1.8.2-1) unstable; urgency=low
+
+  * New upstream release.
+  * Bump Standards-Version to 3.9.3 (no changes needed).
+
+ -- Mehdi Dogguy <mehdi@debian.org>  Tue, 15 May 2012 11:31:18 +0200
+
+ocamlgraph (1.8.1-3) unstable; urgency=low
+
+  * Undo changes of 1.8.1-2
+
+ -- Ralf Treinen <treinen@debian.org>  Sat, 11 Feb 2012 17:50:30 +0100
+
+ocamlgraph (1.8.1-2) unstable; urgency=low
+
+  * Team Upload
+  * There is no gtk on the s390x architecture: do not build-depend on
+    liblablgtk2-ocaml-dev and liblablgtk2-gnome-ocaml-dev on s390x.
+
+ -- Ralf Treinen <treinen@debian.org>  Sat, 11 Feb 2012 15:01:41 +0100
+
+ocamlgraph (1.8.1-1) unstable; urgency=low
+
+  [ Stéphane Glondu ]
+  * Team upload
+  * New upstream release
+  * Switch source package format to 3.0 (quilt)
+  * Bump Standards-Version to 3.9.2
+
+  [ Stefano Zacchiroli ]
+  * remove myself from uploaders
+
+ -- Stéphane Glondu <glondu@debian.org>  Sat, 03 Dec 2011 18:01:34 +0100
+
+ocamlgraph (1.7-1) unstable; urgency=low
+
+  * New upstream version.
+  * Update copyright file, and mention linking exception (Closes: #589032).
+
+ -- Mehdi Dogguy <mehdi@debian.org>  Fri, 15 Apr 2011 22:15:07 +0200
+
+ocamlgraph (1.5-1) unstable; urgency=low
+
+  * New upstream release
+    + Remove 0003-dgraph-handle-dotted-ellipse.patch
+
+ -- Mehdi Dogguy <mehdi@debian.org>  Sat, 15 May 2010 15:10:43 +0200
+
+ocamlgraph (1.4-1) unstable; urgency=low
+
+  * New upstream release
+  * Convert patches to quilt format
+  * Bump standard version to 3.8.4, no changed needed.
+
+ -- Mehdi Dogguy <mehdi@debian.org>  Tue, 27 Apr 2010 15:58:35 +0200
+
+ocamlgraph (1.3+debian-2) unstable; urgency=low
+
+  * Provide a new binary package to avoid installing gnome and gtk
+    libraries when you only need to manipulate Graphs (Closes: #572893)
+    - libocamlgraph-view-ocaml-dev
+  * Put the generated documentation in a new binary (arch:all) package.
+    - libocamlgraph-ocaml-doc
+  * Make the new binary packages conflicts/replaces former versions of
+    libocamlgraph-ocaml-dev.
+
+ -- Mehdi Dogguy <mehdi@debian.org>  Sun, 07 Mar 2010 21:40:23 +0100
+
+ocamlgraph (1.3+debian-1) unstable; urgency=low
+
+  * New upstream release
+  * Update README.source
+  * Fix include order in debian/rules
+  * Use new features of dh-ocaml 0.9
+    - Generate documentation using dh_ocamldoc (Closes: #559330)
+
+ -- Mehdi Dogguy <mehdi@debian.org>  Sun, 10 Jan 2010 14:42:40 +0100
+
+ocamlgraph (1.2+debian-1) unstable; urgency=low
+
+  * New Upstream Version
+  * Use my Debian address
+  * Remove 04_more_clean.dpatch: not needed anymore
+  * Bump standards version to 3.8.3, no changes needed
+  * Update copyright file
+  * Remove ocamlweb from build-dependencies as we don't use it.
+
+ -- Mehdi Dogguy <mehdi@debian.org>  Fri, 04 Sep 2009 09:41:53 +0200
+
+ocamlgraph (1.1-1) unstable; urgency=low
+
+  [ Mehdi Dogguy ]
+  * New Upstream Version
+  * Update some build-dependencies versions
+  * Upgrade Standards-Version to 3.8.2, no changes needed.
+  * Update patch 01_makefile
+
+  [ Sylvain Le Gall ]
+  * Clean and restore files to come back to pristine-tar state after
+    clean
+
+ -- Mehdi Dogguy <dogguy@pps.jussieu.fr>  Mon, 06 Jul 2009 20:50:04 +0000
+
+ocamlgraph (1.0-2) unstable; urgency=low
+
+  * Modify 01_makefile.dpatch to:
+    - install .cmi and .o files of the viewer
+    - install graph.o
+  * viewgraph has to link against gtkinit
+  * Install ocamlgraph-viewer
+  * Move libocamlgraph-ocaml-dev to section ocaml
+  * Upgrade Standards-Version to 3.8.1, no changes needed.
+  * Add myself to uploaders
+  * Add and install a manpage for ocamlgraph-viewer
+
+ -- Mehdi Dogguy <dogguy@pps.jussieu.fr>  Tue, 12 May 2009 13:05:12 +0200
+
+ocamlgraph (1.0-1) unstable; urgency=low
+
+  [ Sylvain Le Gall ]
+  * New upstream release:
+    * Don't ship viewgraph which is segfaulting
+    * Update 01_makefile.dpatch
+    * Don't use upstream documentation, since there is a bug in viewgraph
+      that prevent generating it
+  * Update copyright file to something more compliant with
+    http://wiki.debian.org/Proposals/CopyrightFormat
+  * Add build-dependency on dh-ocaml
+  * Upgrade Standards-Version to 3.8.0 (debian/README.source)
+
+  [ Stephane Glondu ]
+  * Switch packaging to git
+
+  [ Stefano Zacchiroli ]
+  * debian/control: add missing ${misc:Depends}
+  * bump debhelper compatibility level to 7
+  * debian/rules: use ocaml.mk as a CDBS "rules" snippet
+
+ -- Sylvain Le Gall <gildor@debian.org>  Fri, 20 Mar 2009 12:42:55 +0100
+
+ocamlgraph (0.99c-1) unstable; urgency=low
+
+  [ Stefano Zacchiroli ]
+  * new upstream release (Closes: #486910)
+    - split a new binary package ocamlgraph-editor to ship the GNOME-based
+      graph editor based on hyperbolic geometry
+  * promote Homepage to a real debian/control field
+  * fix vcs-svn field to point just above the debian/ dir
+  * debian/watch: update to point to the new homepage
+  * debian/control:
+    - update Homepage field to point to the new homepage
+    - drop versioning in cdbs dependency, the required version is in stable
+    - revamp long description mentioning new functionality
+    - in long description, formats list items properly as pre-formatted lines
+      (Closes: #480338)
+    - add Build-Depends on liblablgtk2{-gnome,}-ocaml-dev to build the editor
+  * debian/patches/
+    - 00dpatch.conf: add dpatch configuration fail pointing to ../upstream for
+      upstream tarballs
+    - 01_makefile.dpatch: refresh wrt latest upstream Makefile.in
+    - 02_editor_naming.dpatch: (new patch) rename the best built editor to
+      "ocamlgraph-editor"
+    - 03_hide_b0rken_icon.dpatch: (new patch) avoid references to the non
+      existent icon "ed_icon.xpm"
+    - remove no longer applied patches: 02_literals_overflow.dpatch,
+      03_META.dpatch, 04_ocamldoc_coloring.dpatch
+  * debian/libocamlgraph-ocaml-dev.examples: refresh according to new upstream
+    example placement
+  * bump Standards-Version to 3.8.0, no changes needed
+  * debian/copyright:
+    - revamp with more precise mention of copyright owners (separate from
+      contributors) and license version details (LGPL, v2 only)
+    - provide copyright details for Debian packaging, adding myself
+    - switch to machine parseable copyright format, as per
+      http://wiki.debian.org/Proposals/CopyrightFormat
+    - change file encoding to UTF-8, makes lintian happy
+
+  [ Sylvain Le Gall ]
+  * Use ocaml 3.10.0-9 for generating .ocamldoc-apiref automatically
+  * Set debian-ocaml-maint@l.d.o as maintainer, me and zack as uploaders
+  * Remove useless control.in
+  * Add manpage for ocamlgraph-editor
+  * Clean files that are generated and prevents building debian diff
+    files
+
+ -- Sylvain Le Gall <gildor@debian.org>  Sat, 21 Jun 2008 12:58:39 +0200
+
+ocamlgraph (0.98-3) unstable; urgency=low
+
+  * Build for ocaml 3.10.0
+  * Place the documentation in htm/api
+
+ -- Sylvain Le Gall <gildor@debian.org>  Tue, 04 Sep 2007 00:26:46 +0200
+
+ocamlgraph (0.98-2) experimental; urgency=low
+
+  * Upgrade debian/watch version to 3,
+  * Use ocaml.mk,
+  * Change email address to gildor@debian.org everywhere
+  * Rebuild for ocaml 3.10.0
+
+ -- Sylvain Le Gall <gildor@debian.org>  Tue, 24 Jul 2007 01:27:37 +0200
+
+ocamlgraph (0.98-1) unstable; urgency=low
+
+  * New upstream release
+  * Upgrade debhelper debian/compat to 5,
+  * Use CDBS for debian/rules,
+  * Add example sudoku.ml.
+
+ -- Sylvain Le Gall <gildor@debian.org>  Fri, 13 Oct 2006 23:41:06 +0200
+
+ocamlgraph (0.97-1) unstable; urgency=low
+
+  * New upstream version,
+  * Remove control.in as per ocaml policy,
+  * Add XS-X-Vcs-Svn in control,
+  * Update 01_makefile.dpatch,
+  * 04_ocamldoc_coloring.dpatch apply upstream.
+
+ -- Sylvain Le Gall <gildor@debian.org>  Fri, 15 Sep 2006 00:44:53 +0200
+
+ocamlgraph (0.96-1) unstable; urgency=low
+
+  * New upstream version
+  * Change my email address to gildor@debian.org,
+  * Made debian/control a PHONY target,
+  * Upgrade standards version to 3.7.2 (no change),
+  * Clean directory doc in debian/rules:clean,
+  * Apply patch 04_ocamldoc_coloring, to correct an ocamldoc 
+    generation error,
+
+ -- Sylvain Le Gall <gildor@debian.org>  Wed, 14 Jun 2006 09:44:39 +0200
+
+ocamlgraph (0.95-3) unstable; urgency=low
+
+  * Rebuild for OCaml 3.09.1
+
+ -- Sylvain Le Gall <sylvain.le-gall@polytechnique.org>  Mon, 23 Jan 2006 23:28:34 +0100
+
+ocamlgraph (0.95-2) unstable; urgency=low
+
+  * Use Apps/Programming for doc-base
+
+ -- Sylvain Le Gall <sylvain.le-gall@polytechnique.org>  Sat,  3 Dec 2005 01:14:11 +0100
+
+ocamlgraph (0.95-1) unstable; urgency=low
+
+  * New upstream release
+  * Remove direct reference to ocaml library dir
+  * Remove hardcoded OCaml ABI
+
+ -- Sylvain Le Gall <sylvain.le-gall@polytechnique.org>  Fri,  2 Dec 2005 23:03:05 +0100
+
+ocamlgraph (0.94a-2) unstable; urgency=low
+
+  * Transition to svn-buildpackage
+
+ -- Sylvain Le Gall <sylvain.le-gall@polytechnique.org>  Mon, 22 Aug 2005 23:51:35 +0200
+
+ocamlgraph (0.94a-1) unstable; urgency=low
+
+  * New upstream release
+  * Upgrade to standards version 3.6.2.0 (no change)
+
+ -- Sylvain Le Gall <sylvain.le-gall@polytechnique.org>  Wed, 27 Jul 2005 23:26:42 +0200
+
+ocamlgraph (0.90-2) unstable; urgency=medium
+
+  * Transition to ocaml 3.08.3 : depends on ocaml-nox-3.08.3
+  * Patch 03_META use graph.cma and graph.cmxa ( Closes: #294806 )
+  * Correct the patch 01_makefile to install graph.a ( Closes: #289138 )
+
+ -- Sylvain Le Gall <sylvain.le-gall@polytechnique.org>  Wed, 23 Mar 2005 23:17:46 +0100
+
+ocamlgraph (0.90-1) unstable; urgency=low
+
+  * New upstream version
+
+ -- Sylvain Le Gall <sylvain.le-gall@polytechnique.org>  Fri,  3 Dec 2004 02:07:35 +0100
+
+ocamlgraph (0.81-1) unstable; urgency=low
+
+  * New upstream version ( ocaml 3.08 )
+  * Migration to ocaml 3.08. Files modified :
+    - control
+    - libocamlgraph-ocaml-dev.dirs
+
+ -- Sylvain LE GALL <sylvain.le-gall@polytechnique.org>  Wed, 28 Jul 2004 00:42:33 +0200
+
+ocamlgraph (0.70-4) unstable; urgency=low
+
+  * Try to use an alternative for graphviz which is not available on all
+    platform ( for suggest fields )
+
+ -- Sylvain LE GALL <sylvain.le-gall@polytechnique.org>  Fri, 21 May 2004 23:54:24 +0200
+
+ocamlgraph (0.70-3) unstable; urgency=low
+
+  * Forget to add dependency to ocaml-findlib ( Closes: #245709 )
+
+ -- Sylvain LE GALL <sylvain.le-gall@polytechnique.org>  Mon, 26 Apr 2004 23:04:52 +0200
+
+ocamlgraph (0.70-2) unstable; urgency=low
+
+  * Rename the binary package to be more relevant regarding upstream
+    source : libgraph-ocaml-dev -> libocamlgraph-ocaml-dev
+
+ -- Sylvain LE GALL <sylvain.le-gall@polytechnique.org>  Mon, 19 Apr 2004 23:10:20 +0200
+
+ocamlgraph (0.70-1) unstable; urgency=low
+
+  * New upstream release
+
+ -- Sylvain LE GALL <sylvain.le-gall@polytechnique.org>  Tue,  9 Mar 2004 01:07:45 +0100
+
+ocamlgraph (0.61-1) unstable; urgency=low
+
+  * New upstream release
+  * As it will be uploaded, close ITP : ( closes: #233764 )
+  * Use a watch file
+  * Build with doc
+
+ -- Sylvain LE GALL <sylvain.le-gall@polytechnique.org>  Sun, 22 Feb 2004 22:44:41 +0100

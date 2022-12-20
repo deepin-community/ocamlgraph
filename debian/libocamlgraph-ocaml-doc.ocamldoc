@@ -1,0 +1,2 @@
+-I src -I dgraph -I view_graph -I +lablgtk2
+--include debian/libocamlgraph-ocaml-dev

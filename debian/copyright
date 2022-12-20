@@ -1,0 +1,112 @@
+Format: http://anonscm.debian.org/viewvc/dep/web/deps/dep5.mdwn?revision=202
+Source: http://ocamlgraph.lri.fr/
+Upstream-Contact:
+ Sylvain Conchon <Sylvain.Conchon@lri.fr>,
+ Jean-Christophe Filliâtre <Jean-Christophe.Filliatre@lri.fr>,
+ Julien Signoles <Julien.Signoles@lri.fr>
+Packaged-By: Sylvain Le Gall <gildor@debian.org>
+Packaged-Date: Sun, 22 Feb 2004 22:45:00 +0100
+
+License: LGPL-2.1
+ The full text of the GNU Library General Public License version 2.1
+ can be found in `/usr/share/common-licenses/LGPL-2.1'.
+
+License: LGPL-2.1 with linking exception
+ The Library is distributed under the terms of the GNU Library General
+ Public License version 2.1.
+ .
+ As a special exception to the GNU Library General Public License, you
+ may link, statically or dynamically, a "work that uses the Library"
+ with a publicly distributed version of the Library to produce an
+ executable file containing portions of the Library, and distribute
+ that executable file under terms of your choice, without any of the
+ additional requirements listed in clause 6 of the GNU Library General
+ Public License. By "a publicly distributed version of the Library",
+ we mean either the unmodified Library as distributed, or a modified
+ version of the Library that is distributed under the conditions
+ defined in clause 3 of the GNU Library General Public License. This
+ exception does not however invalidate any other reasons why the
+ executable file might be covered by the GNU Library General Public
+ License.
+
+License: MIT
+ Permission is hereby granted, free of charge, to any person obtaining
+ a copy of this software and associated documentation files (the
+ "Software"), to deal in the Software without restriction, including
+ without limitation the rights to use, copy, modify, merge, publish,
+ distribute, sublicense, and/or sell copies of the Software, and to
+ permit persons to whom the Software is furnished to do so, subject to
+ the following conditions: The above copyright notice and this
+ permission notice shall be included in all copies or substantial
+ portions of the Software.
+ .
+ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+ EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+ MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+ NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE
+ LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
+ OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
+ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+Files: dgraph/*
+Copyright: © 2009 CEA
+License: LGPL-2.1
+
+Files: view_graph/*
+Copyright: © 2008 Anne Pacalet
+License: LGPL-2.1 with linking exception
+
+Files: src/graphml.ml src/graphml.mli tests/testgraphml.ml
+Copyright: © 2012 Pietro Abate <pietro.abate@pps.jussieu.fr>
+License: LGPL-2.1 with linking exception
+
+Files: src/clique.ml src/clique.mli
+Copyright: © 2014-2015 Giselle Reis
+License: LGPL-2.1 with linking exception
+
+Files: src/mincut.ml src/mincut.mli
+Copyright: © 2013-2014 David Monniaux
+           © 2013-2014 Gabriel Radanne
+License: LGPL-2.1 with linking exception
+
+Files: src/dominator.ml src/dominator.mli
+Copyright: © 2009 Carnegie-Mellon University, David Brumley, and Ivan Jager.
+License: MIT
+
+Files: *
+Copyright: © 2004-2010 Sylvain Conchon <Sylvain.Conchon@lri.fr>
+           © 2004-2010 Jean-Christophe Filliâtre <Jean-Christophe.Filliatre@lri.fr>
+           © 2004-2010 Julien Signoles <Julien.Signoles@lri.fr>
+License: LGPL-2.1
+ The Library is distributed under the terms of the GNU Library General
+ Public License version 2.1.
+ .
+ As a special exception to the GNU Library General Public License, you
+ may link, statically or dynamically, a "work that uses the Library"
+ with a publicly distributed version of the Library to produce an
+ executable file containing portions of the Library, and distribute
+ that executable file under terms of your choice, without any of the
+ additional requirements listed in clause 6 of the GNU Library General
+ Public License. By "a publicly distributed version of the Library",
+ we mean either the unmodified Library as distributed, or a modified
+ version of the Library that is distributed under the conditions
+ defined in clause 3 of the GNU Library General Public License. This
+ exception does not however invalidate any other reasons why the
+ executable file might be covered by the GNU Library General Public
+ License.
+
+Files: debian/*
+Copyright: © 2004-2008 Sylvain Le Gall <gildor@debian.org>
+           ©      2008 Stefano Zacchiroli <zack@debian.org>
+	   © 2009-2011 Mehdi Dogguy <mehdi@debian.org>
+License: GPL-2+
+ The full text of the GNU General Public License version 2 can be
+ found in `/usr/share/common-licenses/GPL-2'.
+
+Files: debian/xml-man/po4a/po/de.po
+Copyright: © 2017,2019 Chris Leick <c.leick@vollbio.de>
+License: GPL-2+
+
+Files: debian/xml-man/po4a/po/pt.po
+Copyright: © 2014,2019 Américo Monteiro <a_monteiro@gmx.com>
+License: GPL-2+

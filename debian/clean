@@ -1,0 +1,5 @@
+debian/xml-man/en/ocamlgraph-editor.1
+debian/xml-man/en/ocamlgraph-viewer.1
+view_graph/.depend
+view_graph/viewGraph.annot
+src/path.mlocamlwizard_tmp_file.annot

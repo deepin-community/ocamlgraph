@@ -1,0 +1,3 @@
+version=3
+opts=dversionmangle=s/\+debian$//,uversionmangle=s/^1\.81$/1.8.1/ \
+http://ocamlgraph.lri.fr/ download/ocamlgraph-([0-9a-z.]+).tar.gz

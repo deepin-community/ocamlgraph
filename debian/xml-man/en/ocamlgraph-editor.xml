@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.4//EN" 
+"/usr/share/xml/docbook/schema/dtd/4.4/docbookx.dtd" [
+  <!ENTITY debian              "Debian GNU/Linux">
+  <!ENTITY dhprg               "<command>ocamlgraph-editor</command>">
+]>
+
+<!--**********************************************************************-->
+<!-- ocamlgraph-editor manpage                                            -->
+<!--                                                                      -->
+<!-- Copyright (C) 2008 Sylvain Le Gall <gildor@debian.org>               -->
+<!--                                                                      -->
+<!-- This library is free software; you can redistribute it and/or        -->
+<!-- modify it under the terms of the GNU Lesser General Public           -->
+<!-- License as published by the Free Software Foundation; either         -->
+<!-- version 2.1 of the License, or (at your option) any later version;   -->
+<!-- with the OCaml static compilation exception.                         -->
+<!--                                                                      -->
+<!-- This library is distributed in the hope that it will be useful,      -->
+<!-- but WITHOUT ANY WARRANTY; without even the implied warranty of       -->
+<!-- MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU    -->
+<!-- Lesser General Public License for more details.                      -->
+<!--                                                                      -->
+<!-- You should have received a copy of the GNU Lesser General Public     -->
+<!-- License along with this library; if not, write to the Free Software  -->
+<!-- Foundation, Inc., 51 Franklin St, Fifth Floor, Boston,               -->
+<!-- MA 02110-1301, USA.                                                  -->
+<!--                                                                      -->
+<!-- Contact: gildor@debian.org                                           -->
+<!--**********************************************************************-->
+
+<refentry>
+
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="refentryinfo.xml"/>
+
+  <refmeta>
+    <refentrytitle>OCAMLGRAPH-EDITOR</refentrytitle>
+    <manvolnum>1</manvolnum>
+    <refmiscinfo class="software">OCamlGraph</refmiscinfo>
+    <refmiscinfo class="manual">User Commands</refmiscinfo>
+  </refmeta>
+
+  <refnamediv>
+    <refname>ocamlgraph-editor</refname>
+
+    <refpurpose>GTK-based graph editor based on hyperbolic geometry.</refpurpose>
+  </refnamediv>
+
+  <refsynopsisdiv>
+    <cmdsynopsis>
+      &dhprg; 
+      <arg>-dfs</arg>
+      <arg>-bfs</arg>
+      <arg>-rr <replaceable>refresh-rate</replaceable></arg>
+      <arg>-aa</arg>
+      <group>
+        <arg>-help</arg>
+        <arg>--help</arg>
+      </group>
+      <arg><replaceable>graph-file</replaceable></arg>
+    </cmdsynopsis>
+  </refsynopsisdiv>
+
+  <refsect1>
+    <title>DESCRIPTION</title>
+
+    <para>This manual page documents briefly the &dhprg; command.</para>
+
+    <para>This manual page was written for the &debian; distribution
+      because the original program does not have a manual page.</para>
+
+    <para>&dhprg; is an OCaml and GTK based graph editor based on hyperbolic geometry.</para>
+
+    <variablelist>
+      <varlistentry>
+        <term><option>-dfs</option></term>
+        <listitem>
+          <para>DFS drawing strategy.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term><option>-bfs</option></term>
+        <listitem>
+          <para>BFS drawing strategy.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term><option>-rr <replaceable>refresh-rate</replaceable></option></term>
+        <listitem>
+          <para>Set the refresh rate, must be greater than 0.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term><option>-aa</option></term>
+        <listitem>
+          <para>Turn off anti-aliased mode.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term><option><replaceable>graph-file</replaceable></option></term>
+        <listitem>
+          <para>Files to edit.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term><option>-help</option></term>
+        <term><option>--help</option></term>
+        <listitem>
+          <para>Display an help message.</para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+    
+  </refsect1>
+
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="license.xml"/>
+</refentry>

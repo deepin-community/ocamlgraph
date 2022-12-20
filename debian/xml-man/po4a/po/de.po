@@ -1,0 +1,205 @@
+# German translation of the po4a ocamlgraph-editor manpage for debian.
+# Copyright (C) 2017 Free Software Foundation, Inc.
+# This file is distributed under the same license as the 
+# ocamlgraph-editor package.
+# Copyright  of this file Chris Leick <c.leick@vollbio.de>, 2017, 2019.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: ocamlgraph-editor 1.8.6-1\n"
+"POT-Creation-Date: 2019-01-24 21:01+0100\n"
+"PO-Revision-Date: 2019-01-26 17:54+0100\n"
+"Last-Translator: Chris Leick <c.leick@vollbio.de>\n"
+"Language-Team: German <debian-l10n-german@lists.debian.org>\n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#. type: Content of the debian entity
+#: debian/xml-man/en/ocamlgraph-editor.xml:4 debian/xml-man/en/license.xml:4
+msgid "Debian GNU/Linux"
+msgstr "Debian GNU/Linux"
+
+#. type: Content of the dhprg entity
+#: debian/xml-man/en/ocamlgraph-editor.xml:5
+msgid "<command>ocamlgraph-editor</command>"
+msgstr "<command>ocamlgraph-editor</command>"
+
+#. type: Content of: <refentry><refmeta><refentrytitle>
+#: debian/xml-man/en/ocamlgraph-editor.xml:37
+msgid "OCAMLGRAPH-EDITOR"
+msgstr "OCAMLGRAPH-EDITOR"
+
+#. type: Content of: <refentry><refmeta><manvolnum>
+#: debian/xml-man/en/ocamlgraph-editor.xml:38
+msgid "1"
+msgstr "1"
+
+#. type: Content of: <refentry><refmeta><refmiscinfo>
+#: debian/xml-man/en/ocamlgraph-editor.xml:39
+msgid "OCamlGraph"
+msgstr "OCamlGraph"
+
+#. type: Content of: <refentry><refmeta><refmiscinfo>
+#: debian/xml-man/en/ocamlgraph-editor.xml:40
+msgid "User Commands"
+msgstr "Anwenderbefehle"
+
+#. type: Content of: <refentry><refnamediv><refname>
+#: debian/xml-man/en/ocamlgraph-editor.xml:44
+msgid "ocamlgraph-editor"
+msgstr "ocamlgraph-editor.de"
+
+#. type: Content of: <refentry><refnamediv><refpurpose>
+#: debian/xml-man/en/ocamlgraph-editor.xml:46
+msgid "GTK-based graph editor based on hyperbolic geometry."
+msgstr "GTK-basierter Diagramm-Editor auf Basis hyperbolischer Geometrie."
+
+#. type: Content of: <refentry><refsynopsisdiv><cmdsynopsis>
+#: debian/xml-man/en/ocamlgraph-editor.xml:51
+msgid ""
+"&dhprg; <arg>-dfs</arg> <arg>-bfs</arg> <arg>-rr <replaceable>refresh-rate</"
+"replaceable></arg> <arg>-aa</arg> <group> <arg>-help</arg> <arg>--help</arg> "
+"</group> <arg><replaceable>graph-file</replaceable></arg>"
+msgstr ""
+"&dhprg; <arg>-dfs</arg> <arg>-bfs</arg> <arg>-rr "
+"<replaceable>Erneuerungsrate</replaceable></arg> <arg>-aa</arg> <group> "
+"<arg>-help</arg> <arg>--help</arg> </group> <arg><replaceable>Diagrammdatei</"
+"replaceable></arg>"
+
+#. type: Content of: <refentry><refsect1><title>
+#: debian/xml-man/en/ocamlgraph-editor.xml:65
+msgid "DESCRIPTION"
+msgstr "BESCHREIBUNG"
+
+#. type: Content of: <refentry><refsect1><para>
+#: debian/xml-man/en/ocamlgraph-editor.xml:67
+msgid "This manual page documents briefly the &dhprg; command."
+msgstr "Diese Handbuchseite dokumentiert kurz den Befehl &dhprg;."
+
+#. type: Content of: <refentry><refsect1><para>
+#: debian/xml-man/en/ocamlgraph-editor.xml:69
+msgid ""
+"This manual page was written for the &debian; distribution because the "
+"original program does not have a manual page."
+msgstr ""
+"Diese Handbuchseite wurde für die &debian;-Distribution geschrieben, da das "
+"Originalprogramm keine Handbuchseite hat."
+
+#. type: Content of: <refentry><refsect1><para>
+#: debian/xml-man/en/ocamlgraph-editor.xml:72
+msgid ""
+"&dhprg; is an OCaml and GTK based graph editor based on hyperbolic geometry."
+msgstr ""
+"&dhprg; ist ein OCaml- und GTK-basierter Diagramm-Editor, der auf "
+"hyperbolischer Geometrie beruht."
+
+#. type: Content of: <refentry><refsect1><variablelist><varlistentry><term>
+#: debian/xml-man/en/ocamlgraph-editor.xml:76
+msgid "<option>-dfs</option>"
+msgstr "<option>-dfs</option>"
+
+#. type: Content of: <refentry><refsect1><variablelist><varlistentry><listitem><para>
+#: debian/xml-man/en/ocamlgraph-editor.xml:78
+msgid "DFS drawing strategy."
+msgstr "DFS-Zeichenstrategie"
+
+#. type: Content of: <refentry><refsect1><variablelist><varlistentry><term>
+#: debian/xml-man/en/ocamlgraph-editor.xml:82
+msgid "<option>-bfs</option>"
+msgstr "<option>-bfs</option>"
+
+#. type: Content of: <refentry><refsect1><variablelist><varlistentry><listitem><para>
+#: debian/xml-man/en/ocamlgraph-editor.xml:84
+msgid "BFS drawing strategy."
+msgstr "BFS-Zeichenstrategie"
+
+#. type: Content of: <refentry><refsect1><variablelist><varlistentry><term>
+#: debian/xml-man/en/ocamlgraph-editor.xml:88
+msgid "<option>-rr <replaceable>refresh-rate</replaceable></option>"
+msgstr "<option>-rr <replaceable>Erneuerungsrate</replaceable></option>"
+
+#. type: Content of: <refentry><refsect1><variablelist><varlistentry><listitem><para>
+#: debian/xml-man/en/ocamlgraph-editor.xml:90
+msgid "Set the refresh rate, must be greater than 0."
+msgstr "setzt die Erneuerungsrate, muss größer als 0 sein."
+
+#. type: Content of: <refentry><refsect1><variablelist><varlistentry><term>
+#: debian/xml-man/en/ocamlgraph-editor.xml:94
+msgid "<option>-aa</option>"
+msgstr "<option>-aa</option>"
+
+#. type: Content of: <refentry><refsect1><variablelist><varlistentry><listitem><para>
+#: debian/xml-man/en/ocamlgraph-editor.xml:96
+msgid "Turn off anti-aliased mode."
+msgstr "deaktiviert den Antialiasing-Modus."
+
+#. type: Content of: <refentry><refsect1><variablelist><varlistentry><term>
+#: debian/xml-man/en/ocamlgraph-editor.xml:100
+msgid "<option><replaceable>graph-file</replaceable></option>"
+msgstr "<option><replaceable>Diagramm-Datei</replaceable></option>"
+
+#. type: Content of: <refentry><refsect1><variablelist><varlistentry><listitem><para>
+#: debian/xml-man/en/ocamlgraph-editor.xml:102
+msgid "Files to edit."
+msgstr "zu bearbeitende Dateien"
+
+#. type: Content of: <refentry><refsect1><variablelist><varlistentry><term>
+#: debian/xml-man/en/ocamlgraph-editor.xml:106
+msgid "<option>-help</option>"
+msgstr "<option>-help</option>"
+
+#. type: Content of: <refentry><refsect1><variablelist><varlistentry><term>
+#: debian/xml-man/en/ocamlgraph-editor.xml:107
+msgid "<option>--help</option>"
+msgstr "<option>--help</option>"
+
+#. type: Content of: <refentry><refsect1><variablelist><varlistentry><listitem><para>
+#: debian/xml-man/en/ocamlgraph-editor.xml:109
+msgid "Display an help message."
+msgstr "zeigt eine Hilfenachricht an."
+
+#. type: Content of: <refsect1><title>
+#: debian/xml-man/en/license.xml:32
+msgid "LICENSE"
+msgstr "LIZENZ"
+
+#. type: Content of: <refsect1><para>
+#: debian/xml-man/en/license.xml:35
+msgid ""
+"This manual page was written by <personname> <firstname>Sylvain</firstname> "
+"<surname>Le Gall</surname> </personname> <email>gildor@debian.org</email> "
+"for the &debian; system (but may be used by others).  Permission is granted "
+"to copy, distribute and/or modify this document under the terms of the "
+"<acronym>GNU</acronym> Lesser General Public License, Version 2.1 or any "
+"later version published by the Free Software Foundation; considering as "
+"source code all the file that enable the production of this manpage."
+msgstr ""
+"Diese Handbuchseite wurde von <personname> <firstname>Sylvain</firstname> "
+"<surname>Le Gall</surname> </personname> <email>gildor@debian.org</email> "
+"für das &debian;-System geschrieben, kann aber auch von anderen benutzt "
+"werden. Das Kopieren, Verteilen und Ändern dieses Dokuments wird unter den "
+"Bedingungen der <acronym>GNU</acronym> Lesser General Public License, "
+"Version 2.1 oder jeder neueren Version, die von der Free Software Foundation "
+"veröffentlicht wird, gewährt. Alle Dateien, die die Erzeugung dieser "
+"Handbuchseite ermöglichen, werden als Quellcode betrachtet."
+
+#. type: Content of: <refentryinfo>
+#: debian/xml-man/en/refentryinfo.xml:31
+msgid ""
+"<author> <firstname>Sylvain</firstname> <surname>Le Gall</surname> "
+"<email>gildor@debian.org</email> <placeholder type=\"personblurb\" id=\"0\"/"
+"> </author> <copyright> <year>2008</year> <holder>Sylvain Le Gall</holder> </"
+"copyright> <date>June 21, 2008</date>"
+msgstr ""
+"<author> <firstname>Sylvain</firstname> <surname>Le Gall</surname> "
+"<email>gildor@debian.org</email> <placeholder type=\"personblurb\" id=\"0\"/"
+"> </author> <copyright> <year>2008</year> <holder>Sylvain Le Gall</holder> </"
+"copyright> <date>21. Juni 2008</date>"
+
+#. type: Content of: outside any tag (error?)
+#: debian/xml-man/en/refentryinfo.xml:30
+msgid "<placeholder type=\"refentryinfo\" id=\"0\"/>"
+msgstr "<placeholder type=\"refentryinfo\" id=\"0\"/>"

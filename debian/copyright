@@ -1,4 +1,4 @@
-Format: http://anonscm.debian.org/viewvc/dep/web/deps/dep5.mdwn?revision=202
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Source: http://ocamlgraph.lri.fr/
 Upstream-Contact:
  Sylvain Conchon <Sylvain.Conchon@lri.fr>,
@@ -6,6 +6,28 @@ Upstream-Contact:
  Julien Signoles <Julien.Signoles@lri.fr>
 Packaged-By: Sylvain Le Gall <gildor@debian.org>
 Packaged-Date: Sun, 22 Feb 2004 22:45:00 +0100
+
+Files: *
+Copyright: © 2004-2010 Sylvain Conchon <Sylvain.Conchon@lri.fr>
+           © 2004-2010 Jean-Christophe Filliâtre <Jean-Christophe.Filliatre@lri.fr>
+           © 2004-2010 Julien Signoles <Julien.Signoles@lri.fr>
+License: LGPL-2.1
+ The Library is distributed under the terms of the GNU Library General
+ Public License version 2.1.
+ .
+ As a special exception to the GNU Library General Public License, you
+ may link, statically or dynamically, a "work that uses the Library"
+ with a publicly distributed version of the Library to produce an
+ executable file containing portions of the Library, and distribute
+ that executable file under terms of your choice, without any of the
+ additional requirements listed in clause 6 of the GNU Library General
+ Public License. By "a publicly distributed version of the Library",
+ we mean either the unmodified Library as distributed, or a modified
+ version of the Library that is distributed under the conditions
+ defined in clause 3 of the GNU Library General Public License. This
+ exception does not however invalidate any other reasons why the
+ executable file might be covered by the GNU Library General Public
+ License.
 
 License: LGPL-2.1
  The full text of the GNU Library General Public License version 2.1
@@ -73,40 +95,10 @@ Files: src/dominator.ml src/dominator.mli
 Copyright: © 2009 Carnegie-Mellon University, David Brumley, and Ivan Jager.
 License: MIT
 
-Files: *
-Copyright: © 2004-2010 Sylvain Conchon <Sylvain.Conchon@lri.fr>
-           © 2004-2010 Jean-Christophe Filliâtre <Jean-Christophe.Filliatre@lri.fr>
-           © 2004-2010 Julien Signoles <Julien.Signoles@lri.fr>
-License: LGPL-2.1
- The Library is distributed under the terms of the GNU Library General
- Public License version 2.1.
- .
- As a special exception to the GNU Library General Public License, you
- may link, statically or dynamically, a "work that uses the Library"
- with a publicly distributed version of the Library to produce an
- executable file containing portions of the Library, and distribute
- that executable file under terms of your choice, without any of the
- additional requirements listed in clause 6 of the GNU Library General
- Public License. By "a publicly distributed version of the Library",
- we mean either the unmodified Library as distributed, or a modified
- version of the Library that is distributed under the conditions
- defined in clause 3 of the GNU Library General Public License. This
- exception does not however invalidate any other reasons why the
- executable file might be covered by the GNU Library General Public
- License.
-
 Files: debian/*
 Copyright: © 2004-2008 Sylvain Le Gall <gildor@debian.org>
            ©      2008 Stefano Zacchiroli <zack@debian.org>
-	   © 2009-2011 Mehdi Dogguy <mehdi@debian.org>
+           © 2009-2011 Mehdi Dogguy <mehdi@debian.org>
 License: GPL-2+
  The full text of the GNU General Public License version 2 can be
  found in `/usr/share/common-licenses/GPL-2'.
-
-Files: debian/xml-man/po4a/po/de.po
-Copyright: © 2017,2019 Chris Leick <c.leick@vollbio.de>
-License: GPL-2+
-
-Files: debian/xml-man/po4a/po/pt.po
-Copyright: © 2014,2019 Américo Monteiro <a_monteiro@gmx.com>
-License: GPL-2+

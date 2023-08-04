@@ -46,6 +46,7 @@ end
 module type S = sig
 
   type t       (** type of graphs *)
+
   type vertex  (** type of vertices *)
 
   module S: Set.S with type elt = vertex
@@ -127,8 +128,8 @@ module Make(G : G) : S with type t = G.t and type vertex = G.V.t
 
 module type I = sig
   include G
-  val create: ?size:int -> unit -> t
-  val add_edge: t -> V.t -> V.t -> unit
+  val empty: unit -> t
+  val add_edge: t -> V.t -> V.t -> t
 end
 
 module Make_graph(G:I): sig

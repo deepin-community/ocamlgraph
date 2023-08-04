@@ -48,9 +48,6 @@ let () = Format.printf "seed = %d@." seed; Random.init seed
 
 (* undirected graphs with integer coordinates and integer labels on edges *)
 
-module IntInt = struct 
-  type t = int * int 
-end
 module Int = struct 
   type t = int 
   let compare = compare 
@@ -67,8 +64,9 @@ module R = Rand.I(G)
 
 module W = struct 
   type label = G.E.label
+  type edge = G.E.t
   type t = int
-  let weight x = x
+  let weight x = G.E.label x
   let zero = 0
   let add = (+)
   let compare = compare
@@ -89,7 +87,7 @@ module Time = struct
   let time5 f x = 
     let t = Array.init 5 (fun _ -> snd (utime f x)) in
     if debug then Array.iter (fun x -> Printf.printf "%2.2f\n" x) t;
-    Array.sort Pervasives.compare t;
+    Array.sort Stdlib.compare t;
     (t.(1) +. t.(2) +. t.(3)) /. 3.
         
   let print f x = 
@@ -115,9 +113,3 @@ let test nb_v nb_e =
   Printf.printf "KRUSKAL : %2.2fs\n%!" resk
 
 let () = test v e 
-  
-(*
-Local Variables: 
-compile-command: "make -C .. bin/compare_prim_kruskal.opt"
-End: 
-*)

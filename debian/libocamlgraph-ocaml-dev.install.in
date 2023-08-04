@@ -1,0 +1,4 @@
+usr/lib/ocaml/ocamlgraph/*.cm*
+usr/lib/ocaml/ocamlgraph/*.mli
+OPT: usr/lib/ocaml/ocamlgraph/*.a
+usr/lib/ocaml/ocamlgraph/META

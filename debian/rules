@@ -1,48 +1,25 @@
 #!/usr/bin/make -f
-# debian/rules for ocamlgraph package
-# Copyright (C) 2006 Sylvain Le Gall <gildor@debian.org>
-#
-# This program is free software; you can redistribute it and/or
-# modify it under the terms of the GNU General Public License as
-# published by the Free Software Foundation; either version 2, or (at
-# your option) any later version.
-#
-# This program is distributed in the hope that it will be useful, but
-# WITHOUT ANY WARRANTY; without even the implied warranty of
-# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
-# General Public License for more details.
-#
-# You should have received a copy of the GNU General Public License
-# along with this program; if not, write to the Free Software
-# Foundation, Inc., 51 Franklin St, Fifth Floor, Boston,
-# MA 02110-1301, USA.
 
-include /usr/share/cdbs/1/rules/ocaml.mk
-include /usr/share/cdbs/1/class/autotools.mk
-include /usr/share/cdbs/1/rules/debhelper.mk
-include $(CURDIR)/debian/mk/docbook-manpage.mk
+DESTDIR := $(CURDIR)/debian/tmp
+METAFILE := $(DESTDIR)/usr/lib/ocaml/ocamlgraph/META
 
+%:
+	dh $@ --with ocaml
 
-DEV_PKG = libocamlgraph-ocaml-dev
-DEB_MAKE_CLEAN_TARGET = distclean
-DEB_MAKE_BUILD_TARGET = all
-DEB_MAKE_INSTALL_TARGET = install \
-			  INSTALL_LIBDIR="$(CURDIR)/debian/$(DEV_PKG)/$(OCAML_STDLIB_DIR)/ocamlgraph/"
+override_dh_auto_build:
+	dune build -pocamlgraph @install
+	dune build -pocamlgraph @doc
+	find _build/default/_doc/_html -name "*.dune-keep" -delete
 
-install/libocamlgraph-ocaml-dev:: install/libocamlgraph-ocaml-doc
-	find $(CURDIR)/debian -name '*.mli' -exec chmod 644 '{}' ';'
+override_dh_auto_install:
+	touch _build/default/ocamlgraph_gtk.install
+	DESTDIR=$(DESTDIR) dune install -pocamlgraph
+	(if [ ! `grep -q "version" $(METAFILE)` ]; then \
+	  version=$$(dpkg-parsechangelog -S version); \
+	  echo "version = \"$${version%-*}\"" > $(METAFILE).new ;\
+	  cat $(METAFILE) >> $(METAFILE).new ; \
+	  mv $(METAFILE).new $(METAFILE) ;\
+	fi)
 
-DEB_DH_GENCONTROL_ARGS += -VF:OCamlInterp="ocaml-base-nox-$(OCAML_ABI)"
-
-PO4A_SOURCES := $(CURDIR)/debian/xml-man/po4a/po4a.cfg
-
-DOCBOOK_MANPAGE_SOURCES := $(CURDIR)/debian/xml-man/en/ocamlgraph-editor.xml  \
-			   $(CURDIR)/debian/xml-man/de/ocamlgraph-editor.xml  \
-                           $(CURDIR)/debian/xml-man/pt/ocamlgraph-editor.xml
-
-DOCBOOK_MANPAGE_EXTRA_SOURCES := $(CURDIR)/debian/xml-man/en/license.xml      \
-                                 $(CURDIR)/debian/xml-man/en/refentryinfo.xml \
-				 $(CURDIR)/debian/xml-man/de/license.xml      \
-                                 $(CURDIR)/debian/xml-man/de/refentryinfo.xml \
-				 $(CURDIR)/debian/xml-man/pt/license.xml      \
-                                 $(CURDIR)/debian/xml-man/pt/refentryinfo.xml
+override_dh_auto_test:
+	dune runtest -pocamlgraph

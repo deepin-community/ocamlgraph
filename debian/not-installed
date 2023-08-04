@@ -1,0 +1,13 @@
+usr/lib/ocaml/ocamlgraph/*.ml
+usr/lib/ocaml/ocamlgraph/LICENSE
+usr/lib/ocaml/ocamlgraph/dune-package
+usr/lib/ocaml/ocamlgraph/opam
+
+usr/lib/ocaml/ocamlgraph_gtk/META
+usr/lib/ocaml/ocamlgraph_gtk/dune-package
+usr/lib/ocaml/ocamlgraph_gtk/opam
+
+usr/doc/ocamlgraph/LICENSE
+usr/doc/ocamlgraph_gtk/CHANGES.md
+usr/doc/ocamlgraph_gtk/README.md
+usr/doc/ocamlgraph_gtk/LICENSE

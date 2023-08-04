@@ -17,9 +17,6 @@
 
 module CliqueTree(Gr : Sig.G) = struct
 
-  (* Original vertex set (of Gr) *)
-  module OVSet = Set.Make(Gr.V)
-
   (* Vertex signature *)
   module rec CliqueV :
   sig
@@ -103,15 +100,15 @@ module CliqueTree(Gr : Sig.G) = struct
       (struct type t = CliqueV.t list * CVS.t end)
       (struct
         type t = int
-        let compare : t -> t -> int = Pervasives.compare
-        let hash = Hashtbl.hash
-        let equal x y = x = y
+        let compare : t -> t -> int = Stdlib.compare
+        let hash (x:t) = Hashtbl.hash x
+        let equal (x:int) (y:int) = x = y
       end)
 
   module CliqueTreeE = struct
     type t = int * CVS.t
 
-    let compare (x, _ : t) (y, _ : t) = Pervasives.compare x y
+    let compare (x, _ : t) (y, _ : t) = Stdlib.compare x y
 
     let default = (0, CVS.empty)
 
@@ -144,13 +141,6 @@ module CliqueTree(Gr : Sig.G) = struct
 
   (* Intermediate graph *)
   module G = Persistent.Graph.Concrete(CliqueV)
-
-  (* Convenient types *)
-  module EdgeSet = Set.Make(G.E)
-  module H = Hashtbl.Make(CliqueV)
-
-  (* Used to choose some vertex in the intermediate graph *)
-  module Choose = Oper.Choose(G)
 
   (* Creates the intermediate graph from the original *)
   module Copy = Gmap.Vertex(Gr)(struct include G include Builder.P(G) end)

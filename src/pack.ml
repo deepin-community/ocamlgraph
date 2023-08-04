@@ -35,6 +35,7 @@ struct
   module Dfs = Traverse.Dfs(G)
   module Bfs = Traverse.Bfs(G)
   module Marking = Traverse.Mark(G)
+  module Coloring = Coloring.Mark(G)
 
   module Classic = Classic.I(G)
 
@@ -49,7 +50,7 @@ struct
     let zero = 0
     let add = (+)
     let sub = (-)
-    let compare : t -> t -> int = Pervasives.compare
+    let compare : t -> t -> int = Stdlib.compare
   end
 
   include Path.Dijkstra(G)(W)
@@ -66,7 +67,7 @@ struct
     let flow _ = 0
     let add = (+)
     let sub = (-)
-    let compare : t -> t -> int = Pervasives.compare
+    let compare : t -> t -> int = Stdlib.compare
     let zero = 0
   end
 
@@ -94,7 +95,7 @@ struct
 
   module Int = struct
     type t = int
-    let compare : t -> t -> int = Pervasives.compare
+    let compare : t -> t -> int = Stdlib.compare
   end
 
   include Kruskal.Make(G)(Int)
@@ -197,7 +198,7 @@ end
 
 module I = struct
   type t = int
-  let compare : t -> t -> int = Pervasives.compare
+  let compare : t -> t -> int = Stdlib.compare
   let default = 0
 end
 

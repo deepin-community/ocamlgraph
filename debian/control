@@ -4,17 +4,22 @@ Priority: optional
 Maintainer: Debian OCaml Maintainers <debian-ocaml-maint@lists.debian.org>
 Uploaders: Mehdi Dogguy <mehdi@debian.org>
 Build-Depends:
- cdbs,
  dh-ocaml (>= 0.9),
- debhelper (>= 7),
+ debhelper-compat (=13),
  ocaml-nox (>= 3.11.1),
  ocaml-findlib (>> 1.2.4-2),
+ ocaml-dune (>= 2.0),
+ ocaml-odoc ( >= 2.1.1),
+ libjs-highlight.js,
+ libgraphics-ocaml-dev,
+ libx11-dev,
  docbook-xml (>= 4.4),
  docbook-xsl,
  libxml2-utils,
  xsltproc,
  po4a
-Standards-Version: 3.9.6
+Standards-Version: 4.6.0
+Rules-Requires-Root: no
 Homepage: http://ocamlgraph.lri.fr/
 Vcs-Git: https://salsa.debian.org/ocaml-team/ocamlgraph.git
 Vcs-Browser: https://salsa.debian.org/ocaml-team/ocamlgraph
@@ -37,17 +42,17 @@ Description: graph library for OCaml
   * It provides an easy-to-use graph data structure together with
     several operations and algorithms over graphs.  It is a
     reasonably efficient imperative data structure for directed
-    graphs with vertices and edges labeled with integers. 
+    graphs with vertices and edges labeled with integers.
  .
   * Then ocamlgraph provides several other graph implementations
     for those not satisfied with the one above. Some are
     persistent (imutable) and other imperative (mutable). Some
     are directed and other are not. Some have labels for
     vertices, or labels for edges, or both. Some have abstract
-    types for vertices. etc. 
+    types for vertices. etc.
     These implementations are written as functors: you give the
     types of vertices labels, edge labels, etc. and you get the
-    data structure as a result. 
+    data structure as a result.
  .
   * Finally, ocamlgraph provides several classic operations and
     algorithms over graphs.
@@ -60,6 +65,7 @@ Description: graph library for OCaml
 
 Package: libocamlgraph-ocaml-doc
 Architecture: all
+Multi-Arch: foreign
 Section: doc
 Depends:
  ${ocaml:Depends},

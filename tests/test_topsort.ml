@@ -17,13 +17,13 @@ let test ?(check=true) iter n edges =
   iter (fun v -> incr i; num.(V.label v) <- !i) g;
   let r = Array.init n (fun i -> i) in
   Array.sort (fun i j -> num.(i) - num.(j)) r;
-  if check then for v = 0 to n-1 do printf "%d " r.(v) done; printf "@.";
+  (* if check then for v = 0 to n-1 do printf "%d " r.(v) done; printf "@."; *)
   (* check *)
   let path = PathCheck.check_path (PathCheck.create g) in
   let check_edge (x,y) =
     let vx = v.(x) and vy = v.(y) in
-    printf "x=%d y=%d num(x)=%d num(y)=%d@." x y num.(x) num.(y);
-    printf "x-->y=%b  y-->x=%b@." (path vx vy) (path vy vx);
+    (* printf "x=%d y=%d num(x)=%d num(y)=%d@." x y num.(x) num.(y);
+     * printf "x-->y=%b  y-->x=%b@." (path vx vy) (path vy vx); *)
     assert (num.(x) > 0 && num.(y) > 0);
     assert (num.(x) >= num.(y) || path vx vy || not (path vy vx)) in
   if check then
@@ -58,18 +58,26 @@ let tests iter =
   test 7 [0,1; 1,0; 1,2; 2,3; 3,2; 3,4; 4,5; 5,6; 6,4];
   (* 3 cycles with 2 cycles in a cycle *)
   test 7 [0,1; 1,0; 1,2; 2,3; 3,2; 3,4; 4,5; 5,6; 6,4; 5,2];
-  printf "All tests succeeded.@."
+  printf "test topsort: all tests succeeded.@."
 
 let () = tests Topological.iter
 (* let () = tests Topological.iter_stable *)
 
-let n = int_of_string Sys.argv.(1)
+let rec pow a = function
+  | 0 -> 1
+  | 1 -> a
+  | n -> 
+    let b = pow a (n / 2) in
+    b * b * (if n mod 2 = 0 then 1 else a)
 
 let () =
-  let el = ref [] in
-  (* linear graph *)
-  (* for i = 0 to n-2 do el := (i,i+1) :: !el done; *)
-  (* for i = 0 to n-2 do el := (i+1,i) :: !el done; *)
-  el := [n-1,0]; for i = 0 to n-2 do el := (i,i+1) :: !el done;
-  test ~check:false Topological.iter n !el
+  for n_iter = 0 to 5 do
+    let n = pow 10 n_iter in
+    let el = ref [] in
+    (* linear graph *)
+    (* for i = 0 to n-2 do el := (i,i+1) :: !el done; *)
+    (* for i = 0 to n-2 do el := (i+1,i) :: !el done; *)
+    el := [n-1,0]; for i = 0 to n-2 do el := (i,i+1) :: !el done;
+    test ~check:false Topological.iter n !el
+  done
 

@@ -24,8 +24,6 @@
       http://www.research.att.com/sw/tools/graphviz/ *)
 
 open Format
-open Pervasives (* for compatibility with ocaml 3.12.0+dev17
-                   (incoming ocaml3.12) *)
 
 (***************************************************************************)
 (** {2 Common stuff} *)
@@ -71,11 +69,12 @@ let fprint_square_not_empty printer ppf = function
   | l -> fprintf ppf " [%a]" printer l
 
 type arrow_style =
-  [ `None | `Normal | `Inv | `Dot | `Odot | `Invdot | `Invodot ]
+  [ `None | `Normal | `Onormal | `Inv | `Dot | `Odot | `Invdot | `Invodot ]
 
 let fprint_arrow_style ppf = function
     `None -> fprintf ppf "none"
   | `Normal -> fprintf ppf "normal"
+  | `Onormal -> fprintf ppf "onormal"
   | `Inv -> fprintf ppf "inv"
   | `Dot -> fprintf ppf "dot"
   | `Odot -> fprintf ppf "odot"
@@ -84,7 +83,9 @@ let fprint_arrow_style ppf = function
 
 let fprint_dir ppf = function
     `TopToBottom -> fprintf ppf "TB"
+  | `BottomToTop -> fprintf ppf "BT"
   | `LeftToRight -> fprintf ppf "LR"
+  | `RightToLeft -> fprintf ppf "RL"
 
 type symbseq =
   | COMMA
@@ -633,7 +634,7 @@ module DotAttributes = struct
     | `Quantum of float
     (** If not [0.0], node label dimensions will be rounded to integral
         multiples of it.  Default value is [0.0]. *)
-    | `Rankdir of [ `TopToBottom | `LeftToRight ]
+    | `Rankdir of [ `TopToBottom | `BottomToTop | `LeftToRight | `RightToLeft ]
     (** Direction of rank ordering.  Default value is [`TopToBottom]. *)
     | `Ratio of [ `Float of float | `Fill | `Compress| `Auto ]
     (** Sets the aspect ratio. *)
@@ -945,9 +946,3 @@ module Neato =
     let opening = "graph"
     let edge_arrow = "--"
   end)
-
-(*
-Local Variables:
-compile-command: "make -C .."
-End:
-*)

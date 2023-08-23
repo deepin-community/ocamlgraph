@@ -4,12 +4,12 @@ Priority: optional
 Maintainer: Debian OCaml Maintainers <debian-ocaml-maint@lists.debian.org>
 Uploaders: Mehdi Dogguy <mehdi@debian.org>
 Build-Depends:
- dh-ocaml (>= 0.9),
+ dh-ocaml (>= 1.2),
  debhelper-compat (=13),
- ocaml-nox (>= 3.11.1),
+ ocaml,
  ocaml-findlib (>> 1.2.4-2),
  ocaml-dune (>= 2.0),
- ocaml-odoc ( >= 2.1.1),
+ ocaml-odoc,
  libjs-highlight.js,
  libgraphics-ocaml-dev,
  libx11-dev,
@@ -18,7 +18,7 @@ Build-Depends:
  libxml2-utils,
  xsltproc,
  po4a
-Standards-Version: 4.6.0
+Standards-Version: 4.6.2
 Rules-Requires-Root: no
 Homepage: http://ocamlgraph.lri.fr/
 Vcs-Git: https://salsa.debian.org/ocaml-team/ocamlgraph.git

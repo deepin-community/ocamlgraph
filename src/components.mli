@@ -38,7 +38,7 @@ module Make (G: G) : sig
       number. In particular, [f u = f v] if and only if [u] and
       [v] are in the same component. Another property of the
       numbering is that components are numbered in a topological
-      order: if there is an arc from [u] to [v], then [f u >= f u]
+      order: if there is an arc from [u] to [v], then [f u >= f v]
 
       Not tail-recursive.
       Complexity: O(V+E)
@@ -54,6 +54,55 @@ module Make (G: G) : sig
       The result is a partition of the set of the vertices of [g].
       The [n]-th components is [(scc_array g).(n-1)]. *)
 
+end
+
+(** Connectivity in strongly connected directed graphs *)
+
+module Connectivity (GB: Builder.S) : sig
+  module S : Set.S with type elt = GB.G.vertex
+
+  val strong_articulation_points : GB.G.t -> GB.G.vertex list
+  (** Computes the strong articulation points of the given
+      strongly connected directed graph. The result is undefined if the
+      input graph is not directed and strongly connected.
+
+      A strong articulation point is a vertex that when removed from the
+      original graph disconnects that graph into two or more components.
+
+      The implementation involves constructing the mirror image of the
+      graph; for bidirectional graphs prefer {!module:BiConnectivity}.
+
+      Implements the algorithm from Italiano, Laura, and Santaroni,
+      TCS 447 (2012), "Finding strong bridges and strong articulation points
+      in linear time".
+      Complexity: O(V + E) *)
+
+  val sstrong_articulation_points : GB.G.t -> S.t
+  (** As for [strong_articulation_points] but returns a set. *)
+end
+
+module BiConnectivity (G: Sig.G) : sig
+
+  module S : Set.S with type elt = G.vertex
+
+  val strong_articulation_points : G.t -> G.vertex list
+  (** Computes the strong articulation points of the given
+      strongly connected directed  graph. The result is undefined if the
+      input graph is not directed and strongly connected.
+
+      A strong articulation point is a vertex that when removed from the
+      original graph disconnects that graph into two or more components.
+
+      The implementation traverses the graph by iterating over predecessors;
+      for unidirectional graphs prefer {!module:Connectivity}.
+
+      Implements the algorithm from Italiano, Laura, and Santaroni,
+      TCS 447 (2012), "Finding strong bridges and strong articulation points
+      in linear time".
+      Complexity: O(V + E) *)
+
+  val sstrong_articulation_points : G.t -> S.t
+  (** As for [strong_articulation_points] but returns a set. *)
 end
 
 (** Connected components (for undirected graphs).

@@ -1,25 +1,12 @@
 #!/usr/bin/make -f
+# -*- makefile -*-
 
-DESTDIR := $(CURDIR)/debian/tmp
-METAFILE := $(DESTDIR)/usr/lib/ocaml/ocamlgraph/META
+include /usr/share/ocaml/ocamlvars.mk
 
 %:
-	dh $@ --with ocaml
+	dh $@ --with ocaml --buildsystem ocaml_dune
 
 override_dh_auto_build:
-	dune build -pocamlgraph @install
+	dh_auto_build
 	dune build -pocamlgraph @doc
 	find _build/default/_doc/_html -name "*.dune-keep" -delete
-
-override_dh_auto_install:
-	touch _build/default/ocamlgraph_gtk.install
-	DESTDIR=$(DESTDIR) dune install -pocamlgraph
-	(if [ ! `grep -q "version" $(METAFILE)` ]; then \
-	  version=$$(dpkg-parsechangelog -S version); \
-	  echo "version = \"$${version%-*}\"" > $(METAFILE).new ;\
-	  cat $(METAFILE) >> $(METAFILE).new ; \
-	  mv $(METAFILE).new $(METAFILE) ;\
-	fi)
-
-override_dh_auto_test:
-	dune runtest -pocamlgraph

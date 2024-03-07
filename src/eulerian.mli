@@ -15,36 +15,32 @@
 (*                                                                        *)
 (**************************************************************************)
 
-(** Some useful operations. *)
+(** Eulerian path
 
-open Sig
+    This module implements Hierholzer's algorithm, with O(E) complexity
+    where E is the number of edges.
 
-(** Cartesian product of two ordered types. *)
-module OTProduct(X: ORDERED_TYPE)(Y: ORDERED_TYPE) :
-  ORDERED_TYPE with type t = X.t * Y.t
+    Limitations:
+    - multigraphs are not supported
+ *)
 
-(** Cartesian product of two hashable types. *)
-module HTProduct(X: HASHABLE)(Y: HASHABLE) :
-  HASHABLE with type t = X.t * Y.t
-
-(** Cartesian product of two comparable types. *)
-module CMPProduct(X: COMPARABLE)(Y: COMPARABLE) :
-  COMPARABLE with type t = X.t * Y.t
-
-(** Create a vertex type with some data attached to it *)
-module DataV(L : sig type t end)(V : Sig.COMPARABLE) : sig
-  type data = L.t
-  and label = V.t
-  and t = data ref * V.t
-  val compare : t -> t -> int
-  val hash : t -> int
-  val equal : t -> t -> bool
-  val create : data -> V.t -> t
-  val label : t -> V.t
-  val data : t -> data
-  val set_data : t -> data -> unit
+module type G = sig
+  type t
+  val is_directed : bool
+  module V : Sig.COMPARABLE
+  module E : Sig.EDGE with type vertex = V.t
+  val iter_edges_e : (E.t -> unit) -> t -> unit
 end
 
-module Memo(X: HASHABLE) : sig
-  val memo: ?size:int -> (X.t -> 'a) -> X.t -> 'a
+module Make(G: G) : sig
+
+  val path: G.t -> G.E.t list * bool
+  (** [path g] returns an Eulerian path of [g]. The Boolean indicates
+      whether the path is a cycle. Raises [Invalid_argument] if there
+      is no Eulerian path. *)
+
+  val cycle: G.t -> G.E.t list
+  (** [cycle g] returns an Eulerian cycle of [g].
+      Raises [Invalid_argument] if there is no Eulerian cycle. *)
+
 end

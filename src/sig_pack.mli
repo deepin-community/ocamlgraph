@@ -344,6 +344,18 @@ module type S = sig
     (** [full n] builds a graph with [n] vertices and all possible edges.
         The optional argument [self] indicates if loop edges should be added
         (default value is [true]). *)
+
+    val cycle : int -> t * V.t array
+    (** [cycle n] builds a graph that is a cycle with [n] vertices.
+        Vertices are labelled with 0,1,...,n-1 and there is an edge from
+        vertex [i] to vertex [(i+1) mod n].
+        Vertices are also returned in an array for convenience. *)
+
+    val grid : n:int -> m:int -> t * V.t array array
+    (** [grid n m] builds a grid graph with [n*m] vertices, with edges
+        from vertex [(i,j)] to vertices [(i+1,j)] and [(i,j+1)] (and no
+        wrapping around). Vertex [(i,j)] is labelled with [i*m+j].
+        Vertices are also returned in a [n*m] matrix for convenience. *)
   end
 
   (** Random graphs *)
@@ -407,6 +419,16 @@ module type S = sig
 
     val fold_stable : (V.t -> 'a -> 'a) -> t -> 'a -> 'a
     val iter_stable : (V.t -> unit) -> t -> unit
+  end
+
+  (** Eulerian path *)
+  module Eulerian : sig
+    val path: t -> E.t list * bool
+      (** [path g] returns an Eulerian path of g. The Boolean indicates
+          whether the path is a cycle. Raises [Invalid_argument] if there is
+          no Eulerian path. *)
+
+    val cycle: t -> E.t list
   end
 
   val spanningtree : t -> E.t list

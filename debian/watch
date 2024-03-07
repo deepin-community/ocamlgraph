@@ -1,3 +1,4 @@
-version=3
-opts=dversionmangle=s/\+debian$//,uversionmangle=s/^186$/1.8.6/ \
-https://github.com/backtracking/ocamlgraph/tags .*/v?(\d\S*)\.tar\.gz
+version=4
+opts="searchmode=plain" \
+https://api.github.com/repos/backtracking/ocamlgraph/releases?per_page=50 \
+https://github.com/backtracking/ocamlgraph/releases/download/[^/]+/ocamlgraph-@ANY_VERSION@.tbz

@@ -1,3 +1,19 @@
+ocamlgraph (2.1.0-1) unstable; urgency=medium
+
+  * Team upload
+  * New upstream release
+  * Update debian/watch
+
+ -- Stéphane Glondu <glondu@debian.org>  Fri, 08 Sep 2023 06:56:03 +0200
+
+ocamlgraph (2.0.0-4) unstable; urgency=medium
+
+  * Team upload
+  * Use ocaml_dune DH buildsystem (Closes: #1042104)
+  * Bump Standards-Version to 4.6.2
+
+ -- Stéphane Glondu <glondu@debian.org>  Wed, 26 Jul 2023 21:54:59 +0200
+
 ocamlgraph (2.0.0-3) unstable; urgency=medium
 
   * Team upload
@@ -16,7 +32,7 @@ ocamlgraph (2.0.0-2) experimental; urgency=medium
 ocamlgraph (2.0.0-1) experimental; urgency=low
 
   [ Ralf Treinen ]
-  * Team upload 
+  * Team upload
   * New upstream release
   * debian/watch: point to release tags on github
   * Upstream has changed its build-system to dune;
